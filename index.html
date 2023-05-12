@@ -1,15 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="img/hamburger-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Meat and company</title>
 </head>
 
 <body>
+    <!-- Modelos de hamburgueres na lista e no carrinho -->
+    <div class="models">
+        <!-- Hamburgueres na lista -->
+        <div class="burger-item">
+            <a href="">
+                <div class="burger-item--img"><img src="" alt=""></div>
+                <div class="burger-item--add">+</div>
+            </a>
 
+            <div class="burger-item--price">R$ --</div>
+            <div class="burger-item--name">--</div>
+            <input type="text" class="burger-item--id">
+        </div>
+
+        <!-- Burgers no carrinho -->
+        <div class="cart--item">
+            <img src="" alt="">
+            <div class="cart--item-nome"></div>
+            <div class="cart--item--qtarea">
+                <button class="cart--item-qtmenos">-</button>
+                <div class="cart--item-qt">1</div>
+                <button class="cart--item-qtmais">+</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <h1>Meat and company</h1>
+        <!-- Menu que aparecera no mobile -->
+        <div class="menu-openner"><span>0</span>&#128722;</div>
+    </header>
+
+    <!-- Conteudo principal -->
+    <main>
+        <h2>Carne bovina</h2>
+        <div class="carne-bovina-area"></div>
+
+        <footer>
+            <p><a href="https://github.com/luvsscorpius" target="_blank"><img src="img/github-mark-white.png"
+                        alt=""></a> <a href="https://www.linkedin.com/in/andersonvitor1801/" target="_blank"><img
+                        src="img/linkedin-white-icon.png" alt=""></a>
+            </p>
+        </footer>
+    </main>
+
+    <aside>
+        <div class="cart--area">
+            <div class="menu-closer">❌</div>
+            <h1>Seus produtos</h1>
+            <div class="cart"></div>
+            <div class="cart--details">
+
+                <div class="cart--totalitem subtotal">
+                    <span>Subtotal</span>
+                    <span>R$ --</span>
+                </div>
+
+                <div class="cart--totalitem subtotal">
+                    <span>Desconto</span>
+                    <span>R$ --</span>
+                </div>
+
+                <div class="cart--totalitem subtotal">
+                    <span>Total</span>
+                    <span>R$ --</span>
+                </div>
+
+                <div class="cart--finalizar">Finalizar a compra</div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="burgersWindowArea">
+        <div class="burgersWindowBody">
+            <div class="burgersInfo--cancelMobileButton">Voltar</div>
+            <div class="burgersBig">
+                <img src="" alt="">
+            </div>
+
+            <!-- Burgers Info -->
+            <div class="burgersInfo">
+                <h1>--</h1>
+                <div class="burgersInfo--id"></div>
+                <div class="burgersInfo--desc"></div>
+                <div class="burgersInfo--kc"></div>
+
+                <!-- Burgers preco -->
+                <div class="burgersInfo--pricearea">
+                    <div class="burgersInfo--sector">Preço</div>
+                    <div class="burgersInfo--price">
+                        <div class="burgersInfo--actualPrice">R$ --</div>
+                        <div class="burgersInfo--qtarea">
+                            <button class="burgersInfo--qtmenos">-</button>
+                            <div class="burgersInfo--qt">1</div>
+                            <button class="burgersInfo--qtmais">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="burgersInfo--addButton">Adicionar no carrinho</div>
+                <div class="burgersInfo--cancelButton">Cancelar</div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
