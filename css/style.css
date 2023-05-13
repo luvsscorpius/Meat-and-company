@@ -20,10 +20,6 @@ body {
     min-height: 100vh;
 }
 
-.dark body {
-    color: var(--bg-color-dark);
-}
-
 /* Models */
 
 .models {
@@ -64,7 +60,7 @@ body {
     color: #000;
     font-size: 22px;
     cursor: pointer;
-    margin-top: -10px;
+    margin-top: -70px;
     transition: all ease .2s;
 }
 
@@ -75,7 +71,7 @@ body {
 .burger-item--price {
     font-size: 15px;
     color: #333;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .burger-item--name {
@@ -256,7 +252,6 @@ aside.show {
 
 .dark#mode {
     background-color: var(--bg-color-dark);
-    color: #fff;
     animation: light-to-dark 0.3s ease-in-out;
 }
 
@@ -324,22 +319,22 @@ nav ul li a {
     color: inherit;
 }
 
-.carne-bovina-area {
+#carne-bovina-area {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.frango-area {
+#frango-area {
     display: none;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.acompanhamentos-area {
+#acompanhamentos-area {
     display: none;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.bebidas-frias-area {
+#bebidas-frias-area {
     display: none;
     grid-template-columns: repeat(4, 1fr);
 }
