@@ -68,8 +68,8 @@ bebidasFrias()
 const preencherDadosDoItem = (itemElement, item, index) => {
     itemElement.querySelector('.burger-item--id').value = index
     itemElement.querySelector('.burger-item--img img').src = item.img
-    itemElement.querySelector('#burger-item--name').innerHTML = item.name
-    itemElement.querySelector('#burger-item--price').innerHTML = item.price
+    itemElement.querySelector('.burger-item--name').innerHTML = item.name
+    itemElement.querySelector('.burger-item--price').innerHTML = item.price
 }
 
 const mode = document.querySelector('.mudar-tema')
@@ -81,21 +81,21 @@ mode.addEventListener('click', (event) => {
     const github = document.querySelector('.github')
     const linkedin = document.querySelector('.linkedin')
 
-    const nameCarne = document.querySelector('#carne-bovina-area .burger-item #burger-item--name')
-    const precoCarne = document.querySelector('#carne-bovina-area .burger-item #burger-item--price')
-    const addButtonCarne = document.querySelector('#carne-bovina-area .burger-item #burger-item--add')
+    const nameCarne = document.querySelector('#carne-bovina-area .burger-item .burger-item--name')
+    const precoCarne = document.querySelector('#carne-bovina-area .burger-item .burger-item--price')
+    const addButtonCarne = document.querySelector('#carne-bovina-area .burger-item .burger-item--add')
 
-    const nameFrango = document.querySelector('#frango-area .burger-item #burger-item--name')
-    const precoFrango = document.querySelector('#frango-area .burger-item #burger-item--price')
-    const addButtonFrango = document.querySelector('#frango-area .burger-item #burger-item--add')
+    const nameFrango = document.querySelector('#frango-area .burger-item .burger-item--name')
+    const precoFrango = document.querySelector('#frango-area .burger-item .burger-item--price')
+    const addButtonFrango = document.querySelector('#frango-area .burger-item .burger-item--add')   
 
-    const nameAcompanhamentos = document.querySelector('#acompanhamentos-area .burger-item #burger-item--name')
-    const precoAcompanhamentos = document.querySelector('#acompanhamentos-area .burger-item #burger-item--price')
-    const addButtonAcompanhamentos = document.querySelector('#acompanhamentos-area .burger-item #burger-item--add')
+    const nameAcompanhamentos = document.querySelector('#acompanhamentos-area .burger-item .burger-item--name')
+    const precoAcompanhamentos = document.querySelector('#acompanhamentos-area .burger-item .burger-item--price')
+    const addButtonAcompanhamentos = document.querySelector('#acompanhamentos-area .burger-item .burger-item--add')
 
-    const nameBebidasFrias = document.querySelector('#bebidas-frias-area .burger-item #burger-item--name')
-    const precoBebidasFrias = document.querySelector('#bebidas-frias-area .burger-item #burger-item--price')
-    const addButtonBebidasFrias = document.querySelector('#bebidas-frias-area .burger-item #burger-item--add')
+    const nameBebidasFrias = document.querySelector('#bebidas-frias-area .burger-item .burger-item--name')
+    const precoBebidasFrias = document.querySelector('#bebidas-frias-area .burger-item .burger-item--price')
+    const addButtonBebidasFrias = document.querySelector('#bebidas-frias-area .burger-item .burger-item--add')
 
     if (mode.src.match('moon')) {
         mode.src = '../img/sun.png'
