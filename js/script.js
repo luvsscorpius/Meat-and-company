@@ -118,74 +118,13 @@ const botoesFechar = () => {
 }
 
 const mode = document.querySelector('.mudar-tema')
+const main = document.querySelector('#mode')
+const boddy = document.querySelector('.burgersWindowBody')
 
-mode.addEventListener('click', (event) => {
-    event.preventDefault()
-    console.log('Mudei')
-    const main = document.querySelector('#mode')
-    const github = document.querySelector('.github')
-    const linkedin = document.querySelector('.linkedin')
-
-    const nameCarne = document.querySelector('#carne-bovina-area .burger-item .burger-item--name')
-    const precoCarne = document.querySelector('#carne-bovina-area .burger-item .burger-item--price')
-    const addButtonCarne = document.querySelector('#carne-bovina-area .burger-item .burger-item--add')
-
-    const nameFrango = document.querySelector('#frango-area .burger-item .burger-item--name')
-    const precoFrango = document.querySelector('#frango-area .burger-item .burger-item--price')
-    const addButtonFrango = document.querySelector('#frango-area .burger-item .burger-item--add')
-
-    const nameAcompanhamentos = document.querySelector('#acompanhamentos-area .burger-item .burger-item--name')
-    const precoAcompanhamentos = document.querySelector('#acompanhamentos-area .burger-item .burger-item--price')
-    const addButtonAcompanhamentos = document.querySelector('#acompanhamentos-area .burger-item .burger-item--add')
-
-    const nameBebidasFrias = document.querySelector('#bebidas-frias-area .burger-item .burger-item--name')
-    const precoBebidasFrias = document.querySelector('#bebidas-frias-area .burger-item .burger-item--price')
-    const addButtonBebidasFrias = document.querySelector('#bebidas-frias-area .burger-item .burger-item--add')
-
-    if (mode.src.match('moon')) {
-        mode.src = '../img/sun.png'
-        github.src = '../img/github-mark-white.png'
-        linkedin.src = '../img/linkedin-white-icon.png'
-        main.classList.add('dark')
-
-        nameCarne.classList.add('dark')
-        precoCarne.classList.add('dark')
-        addButtonCarne.classList.add('dark')
-
-        nameFrango.classList.add('dark')
-        precoFrango.classList.add('dark')
-        addButtonFrango.classList.add('dark')
-
-        nameAcompanhamentos.classList.add('dark')
-        precoAcompanhamentos.classList.add('dark')
-        addButtonAcompanhamentos.classList.add('dark')
-
-        nameBebidasFrias.classList.add('dark')
-        precoBebidasFrias.classList.add('dark')
-        addButtonBebidasFrias.classList.add('dark')
-    } else {
-        mode.src = '../img/moon.png'
-        github.src = '../img/github-mark.png'
-        linkedin.src = '../img/linkedin.png'
-        main.classList.remove('dark')
-
-        nameCarne.classList.remove('dark')
-        precoCarne.classList.remove('dark')
-        addButtonCarne.classList.remove('dark')
-
-        nameFrango.classList.remove('dark')
-        precoFrango.classList.remove('dark')
-        addButtonFrango.classList.remove('dark')
-
-        nameAcompanhamentos.classList.remove('dark')
-        precoAcompanhamentos.classList.remove('dark')
-        addButtonAcompanhamentos.classList.remove('dark')
-
-        nameBebidasFrias.classList.remove('dark')
-        precoBebidasFrias.classList.remove('dark')
-        addButtonBebidasFrias.classList.remove('dark')
-
-    }
+mode.addEventListener('click', (e) => {
+    e.preventDefault()
+    main.classList.toggle('dark')
+    boddy.classList.toggle('dark')
 })
 
 //  Mapear os produtos

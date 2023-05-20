@@ -91,10 +91,6 @@ body {
     margin-top: 5px;
 }
 
-.dark.burger-item--name {
-    color: #fff;
-}
-
 .burger-item--id,
 .burger-Info--id {
     display: none;
@@ -266,7 +262,7 @@ aside.show {
     animation: dark-to-light 0.3s ease-in-out;
 }
 
-.dark#mode {
+#mode.dark {
     background-color: var(--bg-color-dark);
     animation: light-to-dark 0.3s ease-in-out;
 }
@@ -339,6 +335,11 @@ nav ul li a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
+
+#carne-bovina-area .burger-item .burger-item--name.dark {
+    color: #a4bf2c;
+}
+
 
 #frango-area {
     display: none;
@@ -518,4 +519,14 @@ footer a img {
     text-align: center;
     line-height: 40px;
     margin-bottom: 30px;
+}
+
+/* Dark */
+
+.burgersWindowBody.dark {
+    background-color: var(--bg-color-dark);
+}
+
+#carne-bovina-area.burger-item:nth-child(1).dark {
+    background-color: #2C5ABF;
 }
