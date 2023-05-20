@@ -87,7 +87,7 @@ mode.addEventListener('click', (event) => {
 
     const nameFrango = document.querySelector('#frango-area .burger-item .burger-item--name')
     const precoFrango = document.querySelector('#frango-area .burger-item .burger-item--price')
-    const addButtonFrango = document.querySelector('#frango-area .burger-item .burger-item--add')   
+    const addButtonFrango = document.querySelector('#frango-area .burger-item .burger-item--add')
 
     const nameAcompanhamentos = document.querySelector('#acompanhamentos-area .burger-item .burger-item--name')
     const precoAcompanhamentos = document.querySelector('#acompanhamentos-area .burger-item .burger-item--price')

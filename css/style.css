@@ -197,12 +197,14 @@ header {
     background-color: var(--header-footer);
     height: 60px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
 header h1 {
     margin-left: 1rem;
+    font-size: 1.8rem;
     color: #eee;
 }
 
