@@ -3,6 +3,7 @@ let modalkey = 0
 let cart = []
 
 // Variaveis para controlar a quantidade inicial de produtos
+let qtProdutos = 1
 let qtCarne = 1
 let qtFrango = 1
 let qtAcompanhamentos = 1
@@ -76,6 +77,7 @@ bebidasFrias()
 
 // Função para preencher os dados dos produtos na main
 const preencherDadosDoItem = (itemElement, item, index) => {
+    itemElement.setAttribute('data-key', index)
     itemElement.querySelector('.burger-item--id').value = index
     itemElement.querySelector('.burger-item--img img').src = item.img
     itemElement.querySelector('.burger-item--name').innerHTML = item.name
@@ -117,6 +119,128 @@ const botoesFechar = () => {
     })
 }
 
+// Função para mudar a quantidade
+
+const mudarQuantidade = () => {
+    // ações nos botões + - da janela modal
+    seleciona('.burgersInfo--qtmais').addEventListener('click', () => {
+        qtProdutos++
+        seleciona('.burgersInfo--qt').innerHTML = qtProdutos
+    })
+
+    seleciona('.burgersInfo--qtmenos').addEventListener('click', () => {
+        if (qtProdutos > 1) {
+            qtProdutos--
+            seleciona('.burgersInfo--qt').innerHTML = qtProdutos
+        }
+    })
+}
+
+// função para saber o id do produto que esta clicando
+const pegarkey = (e) => {
+    let key = e.target.closest('.burger-item').getAttribute('data-key')
+    console.log('Produto clicado', + key)
+    console.log(produtosJson[key])
+
+    // garantir que a quantidade inicial de produtos é 1 
+    qtProdutos = 1
+
+    // para manter a informação de qual produto foi clicado
+    modalkey = key
+
+    return key
+}
+
+// Função para adicionar no carrinho 
+const adicionarNoCarrinho = () => {
+    seleciona('.burgersInfo--addButton').addEventListener('click', () => {
+        console.log('Produto adicionado ao carrinho')
+
+        // precisamos pegar os dados do produto da janela modal atual
+        // qual produto?? utilize a modalkey
+
+        if (modalkey == null) { alert('modal nula') }
+
+        // preco
+        let price = seleciona('.burgersInfo--actualPrice').innerHTML.replace('R$&nbsp;', '')
+        console.log(price)
+
+        // quantidade 
+        console.log('Quantidade de produtos: ' + qtProdutos)
+
+        // agora precisamos criar um identificador agora que junte i
+        let identificador = produtosJson[modalkey].id
+
+        // antes de adicionar precisamos verificar se ja tem aquele código
+        let key = cart.findIndex((item) => item.identificador == identificador)
+        console.log(key)
+
+        if (key > -1) {
+            // se encontrar aumente
+            cart[key].qt += qtProdutos
+        } else {
+            // adicionar produto no carrinho
+            let produto = {
+                id: produtosJson[modalkey].id,
+                qt: qtProdutos,
+                price: parseFloat(price)
+            }
+            cart.push(produto)
+            console.log(produto)
+            console.log('Sub total r$ ' + (produto.qt + produto.price).toFixed(2))
+        }
+        fecharModal()
+        abrirCarrinho()
+    })
+}
+
+// Função para abrir o carrinho
+const abrirCarrinho = () => {
+    console.log('Quantidade de itens no carrinho ' + cart.length)
+    if (cart.length > 0) {
+        // mostrar carrinho 
+        seleciona('aside').classList.add('show')
+        seleciona('header').style.display = 'flex'
+    }
+
+    // exibir o carrinho no modo mobile 
+    seleciona('.menu-openner').addEventListener('click', () => {
+        if (cart.length > 0) {
+            seleciona('aside').classList.add('show')
+            seleciona('aside').style.left = '0'
+        }
+    })
+}
+
+const abrirModalCarrinhoVazio = () => {
+    seleciona('.menu-openner').addEventListener('click', () => {
+        if (cart.length < 1) {
+            seleciona('.carrinho-vazio').style.opacity = 0
+            seleciona('.carrinho-vazio').style.display = 'flex'
+            setTimeout(() => { seleciona('.carrinho-vazio').style.opacity = 1 }, 150)
+        } else {
+            seleciona('aside').classList.add('show')
+            seleciona('aside').style.left = '0'
+        }
+    })
+}
+
+const fecharModalCarrinhoVazio = () => {
+    seleciona('.carrinho-vazio').style.opacity = 0
+    setTimeout(() => {
+        seleciona('.carrinho-vazio').style.display = 'none'
+    }, 500)
+}
+
+
+const botoesFecharModalCarrinhoVazio = () => {
+    seleciona('.voltar').addEventListener('click', fecharModalCarrinhoVazio)
+}
+
+botoesFecharModalCarrinhoVazio()
+abrirModalCarrinhoVazio()
+
+
 const mode = document.querySelector('.mudar-tema')
 const main = document.querySelector('#mode')
 const boddy = document.querySelector('.burgersWindowBody')
@@ -154,6 +278,12 @@ produtosJson.map((item, index) => {
 
             // função para preencher dados modal
             preencherDadosModal(item)
+
+            // deixar a quantidade padrão = 1
+            seleciona('.burgersInfo--qt').innerHTML = qtCarne
+
+            // função para pegar a chave de cada produto que você clicar
+            let chave = pegarkey(e)
         })
 
     }
@@ -168,6 +298,8 @@ produtosJson.map((item, index) => {
             abrirModal()
             botoesFechar()
             preencherDadosModal(item)
+            seleciona('.burgersInfo--qt').innerHTML = qtFrango
+            let chave = pegarkey(e)
         })
     }
 
@@ -181,6 +313,8 @@ produtosJson.map((item, index) => {
             abrirModal()
             botoesFechar()
             preencherDadosModal(item)
+            seleciona('.burgersInfo--qt').innerHTML = qtAcompanhamentos
+            let chave = pegarkey(e)
         })
     }
 
@@ -193,7 +327,12 @@ produtosJson.map((item, index) => {
             abrirModal()
             botoesFechar()
             preencherDadosModal(item)
+            seleciona('.burgersInfo--qt').innerHTML = qtBebidasFrias
+            let chave = pegarkey(e)
         })
     }
 })
+
+mudarQuantidade()
+adicionarNoCarrinho()
 

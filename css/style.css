@@ -392,6 +392,63 @@ footer a img {
     overflow-y: auto;
 }
 
+.carrinho-vazio {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all ease .5s;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.carrinho-vazio-body {
+    width: 300px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 25px;
+}
+
+.voltar {
+    cursor: pointer;
+    background-color: #DC3748;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.erro {
+    background-color: #DC3748;
+    width: 100%;
+    text-transform: uppercase;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    border-radius: 3px;
+}
+
 .burgersWindowBody {
     width: 800px;
     background-color: #fff;
@@ -520,6 +577,10 @@ footer a img {
     line-height: 40px;
     margin-bottom: 30px;
 }
+
+/* Modal carrinho vazio */
+
+
 
 /* Dark */
 
