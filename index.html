@@ -52,7 +52,7 @@
     <main id="mode">
         <nav id="nav">
             <ul class="items">
-                <li class="item-carne"> <a href=""> Carne bovina </a></li>
+                <li class="item-carne active"> <a href=""> Carne bovina </a></li>
                 <li class="item-frango"><a href=""> Frango </a></li>
                 <li class="item-acompanhamentos"><a href=""> Acompanhamentos </a></li>
                 <li class="item-bebidas-frias"><a href=""> Bebidas frias </a></li>
@@ -84,12 +84,12 @@
                     <span>R$ --</span>
                 </div>
 
-                <div class="cart--totalitem subtotal">
+                <div class="cart--totalitem desconto">
                     <span>Desconto</span>
                     <span>R$ --</span>
                 </div>
 
-                <div class="cart--totalitem subtotal">
+                <div class="cart--totalitem total">
                     <span>Total</span>
                     <span>R$ --</span>
                 </div>
@@ -133,9 +133,21 @@
 
     <div class="carrinho-vazio">
         <div class="carrinho-vazio-body">
-            <div class="erro">Erro</div>
+            <div class="img">
+                <img src="img/erro.png" alt="erro">
+            </div>
             <div class="text">Seu carrinho está vazio, adicione algo e tente novamente</div>
             <div class="voltar">Voltar</div>
+        </div>
+    </div>
+
+    <div class="pedido-confirmadoWindow">
+        <div class="pedido-confirmadobody">
+            <div class="img">
+                <img src="img/pedido-confirmado.png" alt="pedido-confirmado">
+            </div>
+            <div class="text">Parabéns, seu pedido foi realizado com sucesso!</div>
+            <div class="ok">OK</div>
         </div>
     </div>
 

@@ -13,7 +13,7 @@ let qtBebidasFrias = 1
 const seleciona = (elemento) => document.querySelector(elemento)
 const selecionaTodos = (elemento) => document.querySelectorAll(elemento)
 
-carneBovina = () => {
+const carneBovina = () => {
     const carneBovina = document.querySelector('.item-carne').addEventListener('click', (event) => {
         event.preventDefault()
         console.log('cliquei na area carne')
@@ -28,7 +28,7 @@ carneBovina = () => {
 }
 
 
-frango = () => {
+const frango = () => {
     const frango = seleciona('.item-frango').addEventListener('click', (event) => {
         event.preventDefault()
         console.log('Cliquei na area frango')
@@ -42,7 +42,7 @@ frango = () => {
     })
 }
 
-acompanhamentos = () => {
+const acompanhamentos = () => {
     const acompanhamentos = seleciona('.item-acompanhamentos').addEventListener('click', (event) => {
         event.preventDefault()
         console.log('Cliquei na area acompanhamentos')
@@ -52,11 +52,12 @@ acompanhamentos = () => {
             seleciona('#frango-area').style.display = 'none'
             seleciona('#carne-bovina-area').style.display = 'none'
             seleciona('#bebidas-frias-area').style.display = 'none'
+
         }
     })
 }
 
-bebidasFrias = () => {
+const bebidasFrias = () => {
     const bebidasFrias = seleciona('.item-bebidas-frias').addEventListener('click', (event) => {
         event.preventDefault()
         console.log('Cliquei na area bebidas frias')
@@ -74,6 +75,18 @@ carneBovina()
 frango()
 acompanhamentos()
 bebidasFrias()
+
+const list = document.querySelectorAll('.item-carne, .item-frango, .item-acompanhamentos, .item-bebidas-frias')
+
+function activeLin() {
+    list.forEach((item) =>
+        item.classList.remove('active'))
+    this.classList.add('active')
+}
+
+list.forEach((item) =>
+    item.addEventListener('click', activeLin))
+
 
 // Função para preencher os dados dos produtos na main
 const preencherDadosDoItem = (itemElement, item, index) => {
@@ -191,6 +204,7 @@ const adicionarNoCarrinho = () => {
         }
         fecharModal()
         abrirCarrinho()
+        atualizarCarrinho()
     })
 }
 
@@ -232,14 +246,109 @@ const fecharModalCarrinhoVazio = () => {
     }, 500)
 }
 
-
 const botoesFecharModalCarrinhoVazio = () => {
     seleciona('.voltar').addEventListener('click', fecharModalCarrinhoVazio)
 }
 
-botoesFecharModalCarrinhoVazio()
-abrirModalCarrinhoVazio()
+// Função de atualizar o carrinho
+const atualizarCarrinho = () => {
+    //exibe a quantidade de itens no carrinho
+    seleciona('.menu-openner span').innerHTML = cart.length
 
+    if (cart.length > 0) {
+        seleciona('aside').classList.add('show')
+
+        // zerar o cart
+        seleciona('.cart').innerHTML = ''
+
+        // variaveis de calculo antes do for
+        let subtotal = 0
+        let total = 0
+        let desconto = 0
+
+        // preencher os itens no carrinho e calcular 
+        for (let i in cart) {
+            // use o find para pegar o item por id
+            let produtoItem = produtosJson.find((item) => item.id == cart[i].id)
+            console.log(produtoItem)
+
+            // em cada item pegar o subtotal
+            subtotal += cart[i].price * cart[i].qt
+
+            // fazer o clone e exibir os produtos no carrinho
+            let cartItem = seleciona('.models .cart--item').cloneNode(true)
+            seleciona('.cart').append(cartItem)
+
+            let produtoName = `${produtoItem.name}`
+
+            // preencher as informações no carrinho
+            cartItem.querySelector('img').src = produtoItem.img
+            cartItem.querySelector('.cart--item-nome').innerHTML = produtoItem.name
+            cartItem.querySelector('.cart--item-qt').innerHTML = cart[i].qt
+
+            // botoes + e -
+
+            cartItem.querySelector('.cart--item-qtmais').addEventListener('click', () => {
+                console.log('Clicou no botão de aumentar')
+                cart[i].qt++
+                atualizarCarrinho()
+            })
+
+            cartItem.querySelector('.cart--item-qtmenos').addEventListener('click', () => {
+                console.log('Clicou no botão de diminuir')
+                if (cart[i].qt > 1) {
+                    cart[i].qt--
+                } else {
+                    //remover se for zero
+                    cart.splice(i, 1)
+                }
+                (cart.length < 1) ? seleciona('header').style.display = 'flex' : ''
+                atualizarCarrinho()
+            })
+            seleciona('.cart').append(cartItem)
+        }
+        desconto = subtotal * 0
+        total = subtotal - desconto
+
+        // exibir na tela os resultados
+        seleciona('.subtotal span:last-child').innerHTML = subtotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+        seleciona('.desconto span:last-child').innerHTML = desconto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+        seleciona('.total span:last-child').innerHTML = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    } else {
+        // ocultar o carrinho
+        seleciona('aside').classList.remove('show')
+        seleciona('aside').style.left = '100vw'
+    }
+}
+
+// função para finalizar a compra 
+const finalizarCompra = () => {
+    // fechar o carrinho no mobile
+    seleciona('.cart--finalizar').addEventListener('click', () => {
+        seleciona('aside').classList.remove('show')
+        console.log('Compra finalizada')
+        seleciona('aside').style.left = '100vw'
+        seleciona('header').style.display = 'flex'
+        cart = []
+        seleciona('.menu-openner span').innerHTML = cart.length
+        seleciona('.pedido-confirmadoWindow').style.opacity = 0
+        seleciona('.pedido-confirmadoWindow').style.display = 'flex'
+        setTimeout(() => {
+            seleciona('.pedido-confirmadoWindow').style.opacity = 1
+        }, 150)
+    })
+}
+
+const fecharModalPedidoConfirmado = () => {
+    seleciona('.pedido-confirmadoWindow').style.opacity = 0
+    setTimeout(() => {
+        seleciona('.pedido-confirmadoWindow').style.display = 'none'
+    }, 500)
+}
+
+const botoesFecharModalPedidoConfirmado = () => {
+    seleciona('.ok').addEventListener('click', fecharModalPedidoConfirmado)
+}
 
 const mode = document.querySelector('.mudar-tema')
 const main = document.querySelector('#mode')
@@ -249,6 +358,17 @@ mode.addEventListener('click', (e) => {
     e.preventDefault()
     main.classList.toggle('dark')
     boddy.classList.toggle('dark')
+
+    const github = document.querySelector('.github')
+    const linkedin = document.querySelector('.linkedin')
+
+    if (mode.src.match('moon')) {
+        mode.src = '../img/sun.png'
+        github.src = '../img/github-mark-white.png'
+        linkedin.src = '../img/linkedin-white-icon.png'
+    } else {
+        mode.src = '../img/moon.png'
+    }
 })
 
 //  Mapear os produtos
@@ -335,4 +455,9 @@ produtosJson.map((item, index) => {
 
 mudarQuantidade()
 adicionarNoCarrinho()
-
+botoesFecharModalCarrinhoVazio()
+abrirModalCarrinhoVazio()
+atualizarCarrinho()
+finalizarCompra()
+fecharModalPedidoConfirmado()
+botoesFecharModalPedidoConfirmado()

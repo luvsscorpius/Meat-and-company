@@ -6,7 +6,7 @@
     --bg-color-dark: #5e5b5be5;
 
     --header-footer: #F28F38;
-    --aside: #2C5ABF;
+    --aside: #F2D335;
 }
 
 * {
@@ -118,7 +118,7 @@ body {
 }
 
 .cart--item img {
-    width: 60px;
+    width: 80px;
     height: 80px;
     margin-right: 20px;
 }
@@ -318,14 +318,6 @@ nav .items .item-carne,
     transition: .2s ease-in-out;
 }
 
-nav .items .item-carne:hover,
-.item-frango:hover,
-.item-acompanhamentos:hover,
-.item-bebidas-frias:hover {
-    transform: scale(1.02);
-    cursor: pointer;
-}
-
 nav ul li a {
     text-decoration: none;
     color: inherit;
@@ -339,7 +331,6 @@ nav ul li a {
 #carne-bovina-area .burger-item .burger-item--name.dark {
     color: #a4bf2c;
 }
-
 
 #frango-area {
     display: none;
@@ -390,63 +381,6 @@ footer a img {
     justify-content: center;
     align-items: center;
     overflow-y: auto;
-}
-
-.carrinho-vazio {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.5);
-    transition: all ease .5s;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
-}
-
-.carrinho-vazio-body {
-    width: 300px;
-    height: 150px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px #999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 25px;
-}
-
-.voltar {
-    cursor: pointer;
-    background-color: #DC3748;
-    width: 60px;
-    height: 30px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-}
-
-.erro {
-    background-color: #DC3748;
-    width: 100%;
-    text-transform: uppercase;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    border-radius: 3px;
 }
 
 .burgersWindowBody {
@@ -578,9 +512,118 @@ footer a img {
     margin-bottom: 30px;
 }
 
-/* Modal carrinho vazio */
+/* Modal carrinho vazio / pedindo confirmado*/
 
+.carrinho-vazio {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all ease .5s;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
 
+.carrinho-vazio-body {
+    width: 400px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 25px;
+    font-size: 1.3rem;
+}
+
+.voltar {
+    cursor: pointer;
+    background-color: #DC3748;
+    text-transform: uppercase;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.voltar:active {
+    box-shadow: inset 4px 4px 0 #e21b2f;
+    font-size: 0.8rem;
+}
+
+.pedido-confirmadoWindow {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all ease .5s;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.pedido-confirmadobody {
+    width: 400px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.img img {
+    width: 100px;
+}
+
+.ok {
+    background-color: #428C3F;
+    text-transform: uppercase;
+    color: #fff;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.ok:active,
+.active {
+    box-shadow: inset 4px 4px 0 #387237;
+    font-size: 0.8rem;
+}
+
+nav .items .item-carne:active,
+.item-frango:active,
+.item-acompanhamentos:active,
+.item-bebidas-frias:active,
+.active {
+    box-shadow: inset -4px 4px 0 #f57506;
+    font-size: 15px;
+    cursor: pointer;
+}
 
 /* Dark */
 
