@@ -6,7 +6,7 @@
     --bg-color-dark: #5e5b5be5;
 
     --header-footer: #F28F38;
-    --aside: #F2D335;
+    --aside: #F23838;
 }
 
 * {
@@ -105,6 +105,7 @@ body {
 
 .cart--area h1 {
     display: relative;
+    color: #eee;
 }
 
 .cart {
@@ -125,6 +126,7 @@ body {
 
 .cart--item-nome {
     flex: 1;
+    color: #eee;
 }
 
 .cart--item--qtarea {
@@ -157,6 +159,7 @@ body {
     display: flex;
     justify-content: space-between;
     font-size: 15px;
+    color: #eee;
 }
 
 .cart--totalitem span:first-child {
@@ -631,6 +634,60 @@ nav .items .item-carne:active,
     background-color: var(--bg-color-dark);
 }
 
-#carne-bovina-area.burger-item:nth-child(1).dark {
-    background-color: #2C5ABF;
+#carne-bovina-area .burger-item.dark {
+    color: #eee;
+}
+
+.burgersInfo h1.dark {
+    margin-top: 50px;
+    color: #eee;
+    margin-right: 50px;
+    font-size: 1.5rem;
+}
+
+.burgersInfo--desc.dark {
+    font-size: 20px;
+    color: #eee;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-right: 50px;
+    font-family: 'Poppins', Helvetica, Arial;
+}
+
+.burgersInfo--sector.dark {
+    font-size: 20px;
+    color: #eee;
+
+}
+
+.burgersInfo--kc.dark {
+    font-size: 15px;
+    color: #eee;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', Helvetica, Arial;
+}
+
+.burgersInfo--price.dark {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #eee;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+}
+
+.burgersInfo--cancelButton.dark {
+    display: inline-block;
+    cursor: pointer;
+    color: #eee;
+}
+
+.burgersInfo--cancelMobileButton.dark {
+    display: none;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 30px;
+    color: #eee;
 }

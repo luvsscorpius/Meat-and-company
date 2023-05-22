@@ -353,11 +353,25 @@ const botoesFecharModalPedidoConfirmado = () => {
 const mode = document.querySelector('.mudar-tema')
 const main = document.querySelector('#mode')
 const boddy = document.querySelector('.burgersWindowBody')
+const BurgerInfoh1 = document.querySelector('.burgersInfo h1')
+const BurgerInfoDesc = document.querySelector('.burgersInfo--desc')
+const BurgerInfoSector = document.querySelector('.burgersInfo--sector')
+const BurgerInfoKc = document.querySelector('.burgersInfo--kc')
+const BurgerInfoPrice = document.querySelector('.burgersInfo--price')
+const BurgerInfoCancelButton = document.querySelector('.burgersInfo--cancelButton')
+const BurgerInfoMobileButton = document.querySelector('.burgersInfo--cancelMobileButton')
 
 mode.addEventListener('click', (e) => {
     e.preventDefault()
     main.classList.toggle('dark')
     boddy.classList.toggle('dark')
+    BurgerInfoh1.classList.toggle('dark')
+    BurgerInfoDesc.classList.toggle('dark')
+    BurgerInfoSector.classList.toggle('dark')
+    BurgerInfoKc.classList.toggle('dark')
+    BurgerInfoPrice.classList.toggle('dark')
+    BurgerInfoCancelButton.classList.toggle('dark')
+    BurgerInfoMobileButton.classList.toggle('dark')
 
     const github = document.querySelector('.github')
     const linkedin = document.querySelector('.linkedin')
@@ -368,6 +382,8 @@ mode.addEventListener('click', (e) => {
         linkedin.src = '../img/linkedin-white-icon.png'
     } else {
         mode.src = '../img/moon.png'
+        github.src = '../img/github-mark.png'
+        linkedin.src = '../img/linkedin-icon.png'
     }
 })
 
