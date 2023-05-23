@@ -226,6 +226,18 @@ const abrirCarrinho = () => {
     })
 }
 
+// Função para fechar o carrinho
+const fecharCarrinho = () => {
+    // fechar o carrinho no mobile
+    seleciona('.menu-closer').addEventListener('click', () => {
+        console.log('teste')
+        if(cart.length > 0) {
+            seleciona('aside').style.left = '100vw'
+            seleciona('header').style.display = 'flex'
+        }
+    })
+}
+
 const abrirModalCarrinhoVazio = () => {
     seleciona('.menu-openner').addEventListener('click', () => {
         if (cart.length < 1) {
@@ -477,3 +489,4 @@ atualizarCarrinho()
 finalizarCompra()
 fecharModalPedidoConfirmado()
 botoesFecharModalPedidoConfirmado()
+fecharCarrinho()

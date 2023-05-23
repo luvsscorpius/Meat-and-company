@@ -1,0 +1,124 @@
+body {
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+}
+
+header h1 {
+    font-size: 1rem;
+}
+
+header ul li {
+    margin: auto;
+}
+
+.menu-openner {
+    display: flex;
+    margin-right: 20px;
+}
+
+nav .items {
+    overflow-x: visible;
+    overflow-y: hidden;
+    height: 40px;
+    white-space: nowrap;
+    padding-left: 150px;
+    gap: 0;
+
+}
+
+nav .items .item-carne,
+.item-frango,
+.item-acompanhamentos,
+.item-bebidas-frias {
+    display: inline-block;
+    font-size: 20px;
+    white-space: nowrap;
+    width: 200px;
+    margin-left: 10px;
+}
+
+#carne-bovina-area {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+#frango-area {
+    grid-template-columns: repeat(1, 1fr);
+}
+#acompanhamentos-area {
+    grid-template-columns: repeat(1, 1fr);
+}
+#bebidas-frias-area {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+aside {
+    width: auto;
+    position: fixed;
+    left: 100vw;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all ease .2s;
+}
+
+aside.show {
+    width: auto;
+}
+
+.cart-area {
+    width: 100vw;
+}
+
+.menu-closer {
+    display: block;
+}
+
+.burgersWindowArea {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.burgersWindowBody {
+    width: 100vw;
+    display: block;
+    padding: 20px;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+}
+
+.burgersBig img {
+    width: 75%;
+    height: auto;
+}
+
+.burgersInfo h1 {
+    margin-top: 28px;
+}
+
+.burgersInfo--addButton {
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.burgersInfo--cancelButton {
+    display: none;
+}
+
+.burgersInfo--cancelButton.dark {
+    display: none;
+}
+
+.burgersInfo--cancelMobileButton {
+    display: block;
+}
+
+.burgersInfo--cancelMobileButton.dark {
+    display: block;
+}
+
