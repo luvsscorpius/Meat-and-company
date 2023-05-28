@@ -5,155 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/hamburger-favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" media="screen and (max-width:1024px)" href="css/mobile.css">
-    <title>Meat and company</title>
+    <link rel="shortcut icon" href="../img/hamburger-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" media="screen and (max-width:1024px)" href="../css/mobile.css">
+    <title>Meat & company</title>
 </head>
 
 <body>
-    <!-- Modelos de hamburgueres na lista e no carrinho -->
-    <div class="models">
-        <!-- Hamburgueres na lista -->
-        <div class="burger-item">
-            <a href="">
-                <div class="burger-item--img"><img src="" alt="" class="img"></div>
-                <div class="burger-item--add">+</div>
-            </a>
-
-            <div class="burger-item--name">--</div>
-            <div class="burger-item--price">R$ --</div>
-            <input type="text" class="burger-item--id">
-        </div>
-
-        <!-- Burgers no carrinho -->
-        <div class="cart--item">
-            <img src="" alt="">
-            <div class="cart--item-nome">--</div>
-            <div class="cart--item--qtarea">
-                <button class="cart--item-qtmenos">-</button>
-                <div class="cart--item-qt">1</div>
-                <button class="cart--item-qtmais">+</button>
-            </div>
-        </div>
-    </div>
-
-    <header>
-        <h1>Meat and company</h1>
-        <ul>
+    <header class="header-home">
+        <h1>Meat & company</h1>
+        <ul class="ul-home">
+            <li><a href="#" class="ul-item">Home</a></li>
+            <li><a href="page/cardapio.html" class="ul-item">Menu</a></li>
+            <li><a href="#" class="ul-item">Contato</a></li>
+            <li><a href="#" class="ul-item">Sobre</a></li>
             <li>
-                <a href=""><img src="img/moon.png" alt="Imagem da lua" class="mudar-tema"></a>
+                <a href=""><img src="../img/moon.png" alt="Imagem da lua" class="mudar-tema"></a>
             </li>
         </ul>
-        <!-- Menu que aparecera no mobile -->
-        <div class="menu-openner"><span>0</span>&#128722;</div>
     </header>
 
-    <!-- Conteudo principal -->
-    <main id="mode">
-        <nav id="nav">
-            <ul class="items">
-                <li class="item-carne active"> <a href=""> Carne Bovina </a></li>
-                <li class="item-frango"><a href=""> Frango </a></li>
-                <li class="item-acompanhamentos"><a href=""> Acompanhamentos </a></li>
-                <li class="item-bebidas-frias"><a href=""> Bebidas frias </a></li>
-            </ul>
-        </nav>
-        <div id="carne-bovina-area"></div>
-        <div id="frango-area"></div>
-        <div id="acompanhamentos-area"></div>
-        <div id="bebidas-frias-area"></div>
-
-        <footer>
-            <p><a href="https://github.com/luvsscorpius" target="_blank"><img src="img/github-mark.png" alt=""
-                        class="github"></a> <a href="https://www.linkedin.com/in/andersonvitor1801/"
-                    target="_blank"><img src="img/linkedin.png" alt="" class="linkedin"></a>
-            </p>
-        </footer>
-
+    <main class="content">
+        <section class="content-items">
+            <div class="content-item">
+                <h1>O melhor hamburger da cidade!</h1>
+                <p>Peça ja o seu e se apaixone pelo gosto próprio que só a <strong>Meat & company</strong> pode te
+                    oferecer.</p>
+                <p>Rua João Basílio - Centro, Pouso Alegre - MG, 37550-000</p>
+            </div>
+            <img src="img/burger.jpg" alt="">
+        </section>
     </main>
 
-    <aside>
-        <div class="cart--area">
-            <div class="menu-closer">❌</div>
-            <h1>Seus produtos</h1>
-            <div class="cart"></div>
-            <div class="cart--details">
-
-                <div class="cart--totalitem subtotal">
-                    <span>Subtotal</span>
-                    <span>R$ --</span>
-                </div>
-
-                <div class="cart--totalitem desconto">
-                    <span>Desconto</span>
-                    <span>R$ --</span>
-                </div>
-
-                <div class="cart--totalitem total">
-                    <span>Total</span>
-                    <span>R$ --</span>
-                </div>
-
-                <div class="cart--finalizar">Finalizar a compra</div>
-            </div>
-        </div>
-    </aside>
-
-    <div class="burgersWindowArea">
-        <div class="burgersWindowBody">
-            <div class="burgersInfo--cancelMobileButton">Voltar</div>
-            <div class="burgersBig">
-                <img src="" alt="">
-            </div>
-
-            <!-- Burgers Info -->
-            <div class="burgersInfo">
-                <h1>--</h1>
-                <div class="burgersInfo--id"></div>
-                <div class="burgersInfo--desc"></div>
-                <div class="burgersInfo--kc"></div>
-
-                <!-- Burgers preco -->
-                <div class="burgersInfo--pricearea">
-                    <div class="burgersInfo--sector">Preço</div>
-                    <div class="burgersInfo--price">
-                        <div class="burgersInfo--actualPrice">R$ --</div>
-                        <div class="burgersInfo--qtarea">
-                            <button class="burgersInfo--qtmenos">-</button>
-                            <div class="burgersInfo--qt">1</div>
-                            <button class="burgersInfo--qtmais">+</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="burgersInfo--addButton">Adicionar no carrinho</div>
-                <div class="burgersInfo--cancelButton">Cancelar</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="carrinho-vazio">
-        <div class="carrinho-vazio-body">
-            <div class="img">
-                <img src="img/erro.png" alt="erro">
-            </div>
-            <div class="text">Seu carrinho está vazio, adicione algo e tente novamente</div>
-            <div class="voltar">Voltar</div>
-        </div>
-    </div>
-
-    <div class="pedido-confirmadoWindow">
-        <div class="pedido-confirmadobody">
-            <div class="img">
-                <img src="img/pedido-confirmado.png" alt="pedido-confirmado">
-            </div>
-            <div class="text">Parabéns, seu pedido foi realizado com sucesso!</div>
-            <div class="ok">OK</div>
-        </div>
-    </div>
-
-    <script src="js/produtos.js"></script>
-    <script src="js/script.js"></script>
 </body>
 
 </html>

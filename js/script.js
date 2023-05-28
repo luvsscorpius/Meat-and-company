@@ -231,7 +231,7 @@ const fecharCarrinho = () => {
     // fechar o carrinho no mobile
     seleciona('.menu-closer').addEventListener('click', () => {
         console.log('teste')
-        if(cart.length > 0) {
+        if (cart.length > 0) {
             seleciona('aside').style.left = '100vw'
             seleciona('header').style.display = 'flex'
         }
