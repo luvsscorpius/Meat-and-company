@@ -74,6 +74,7 @@ body {
 
 .content {
     display: flex;
+    flex-direction: column;
     margin: auto;
 }
 
@@ -82,13 +83,14 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
+    height: 100vh;
     display: flex;
 }
 
 .content-item {
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 30vh;
 }
 
 .content-item h1 {
@@ -107,8 +109,112 @@ body {
 }
 
 .content-items img {
-    width: 50%;
+    width: 60%;
+    height: 60%;
+    margin-top: 20vh;
 }
+
+/* Amostra/Index */
+
+.mini-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mini-menu-items {
+    background-color: #a4bf2c;
+    height: 70vh;
+}
+
+.mini-menu-items h1,
+h2 {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.mini-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 19.5em;
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 120ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 0.5em;
+    padding-bottom: 3.4em;
+}
+
+.card::after {
+    content: "Quero esse!";
+    padding-top: 1.25em;
+    padding-left: 1.25em;
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    background: #00AC7C;
+    color: #fff;
+    height: 2.5em;
+    width: 90%;
+    transition: all 80ms;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+.card .title {
+    font-family: 'Poppins', Arial, Helvetica;
+    font-size: 1.0rem;
+    position: absolute;
+    left: 0.625em;
+    bottom: 1.875em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+}
+
+
+.card:hover::after {
+    bottom: 0;
+    opacity: 1;
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+.card:active::after {
+    content: "Added !";
+    height: 3.125em;
+}
+
+
+.image {
+    background: rgb(241, 241, 241);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image img {
+    width: 350px;
+}
+
+/* Sobre/index */
+
+
 
 /* Models */
 
