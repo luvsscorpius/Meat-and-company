@@ -47,9 +47,11 @@ nav .items .item-carne,
 #frango-area {
     grid-template-columns: repeat(1, 1fr);
 }
+
 #acompanhamentos-area {
     grid-template-columns: repeat(1, 1fr);
 }
+
 #bebidas-frias-area {
     grid-template-columns: repeat(1, 1fr);
 }
@@ -122,3 +124,25 @@ aside.show {
     display: block;
 }
 
+/* Index */
+
+.header-home {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.ul-home {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.mini-menu-item {
+    display: flex;
+    flex-direction: column;
+}

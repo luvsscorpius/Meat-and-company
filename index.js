@@ -7,6 +7,59 @@ const celular = document.querySelector('.celular')
 const nomeVazio = document.querySelector('.dadosVazio')
 const cadastro = document.querySelector('.cadastrado')
 
+const target = document.querySelectorAll('[data-anime]')
+const animationClss = 'animate'
+
+const mudarTema = document.querySelector('.mudar-tema')
+
+mudarTema.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    const github = document.querySelector('.github')
+    const linkedin = document.querySelector('.linkedin')
+
+    const contentItems = document.querySelector('.content-items')
+    const miniMenu = document.querySelector('.mini-menu-items')
+    const desconto = document.querySelector('.desconto')
+
+    miniMenu.classList.toggle('dark')
+    contentItems.classList.toggle('dark')
+    desconto.classList.toggle('dark')
+
+    if (mudarTema.src.match('moon')) {
+        mudarTema.src = 'img/sun.png'
+        github.src = '../img/github-mark-white.png'
+        linkedin.src = '../img/linkedin-white-icon.png'
+    } else {
+        mudarTema.src = 'img/moon.png'
+        github.src = '../img/github-mark.png'
+        linkedin.src = '../img/linkedin-icon.png'
+    }
+})
+
+function animeScroll() {
+    //precisamos saber o tamanho do scroll ate o topo do site
+    const windowTop = window.pageYOffset + ((window.innerHeight * 3) / 4)
+
+    target.forEach(function (element) {
+        if ((windowTop) > element.offsetTop) {
+            // se for maior eu quero que ele adicione uma class
+            element.classList.add(animationClss)
+        } else {
+            element.classList.remove(animationClss)
+        }
+        console.log(element.offsetTop)
+    })
+}
+
+animeScroll()
+
+if (target.length) {
+    window.addEventListener('scroll', function () {
+        animeScroll()
+    })
+}
+
 const cadastrar = () => {
     btn.addEventListener('click', (e) => {
         e.preventDefault()
@@ -14,17 +67,11 @@ const cadastrar = () => {
         if (nome.value < 1) {
             console.log("Nome vazio")
             abrirDadosVazio()
-        } else {
-            abrirModalCadastrado()
         }
         if (email.value < 1) {
-            console.log('Email vazio')
             abrirDadosVazio()
-        } else {
-            abrirModalCadastrado()
         }
         if (celular.value < 1) {
-            console.log('Celular vazio')
             abrirDadosVazio()
         } else {
             abrirModalCadastrado()

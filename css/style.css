@@ -87,6 +87,15 @@ body {
     display: flex;
 }
 
+.content-items.dark {
+    background: url("../img/bg-home-dark.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
 .content-item {
     display: flex;
     flex-direction: column;
@@ -124,7 +133,14 @@ body {
 
 .mini-menu-items {
     background-color: #a4bf2c;
-    height: 70vh;
+    height: 100%;
+    animation: light-to-dark1 0.3s ease-in-out;
+}
+
+.mini-menu-items.dark {
+    background-color: #333;
+    height: 100%;
+    animation: dark-to-light1 0.3s ease-in-out;
 }
 
 .mini-menu-items h1,
@@ -138,6 +154,7 @@ h2 {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    margin-bottom: 50px;
 }
 
 .card {
@@ -219,6 +236,12 @@ h2 {
     background-color: #428C3F;
 }
 
+.desconto.dark {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
 .desconto-box {
     width: 400px;
     padding: 40px;
@@ -288,6 +311,55 @@ button:hover {
 }
 
 button:active {
+    scale: 1;
+}
+
+.garantir {
+    cursor: pointer;
+    width: 180px;
+    position: relative;
+    padding: 10px 24px;
+    font-size: 18px;
+    color: #eee;
+    border: 2px solid var(--aside);
+    border-radius: 34px;
+    background-color: var(--aside);
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+    margin-left: 220px;
+}
+
+.garantir a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.garantir::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: var(--aside);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.garantir:hover::before {
+    scale: 3;
+}
+
+.garantir:hover {
+    color: #212121;
+    scale: 1.1;
+    box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
+}
+
+.garantir:active {
     scale: 1;
 }
 
@@ -381,8 +453,6 @@ button:active {
     box-shadow: inset 4px 4px 0 #387237;
     font-size: 0.8rem;
 }
-
-
 
 /* Models */
 
@@ -1065,4 +1135,20 @@ nav .items .item-carne:active,
     line-height: 40px;
     margin-bottom: 30px;
     color: #eee;
+}
+
+/* Animações */
+
+[data-anime] {
+    opacity: 0;
+    transition: .3s;
+}
+
+[data-anime="right"] {
+    transform: translate3d(50px, 0, 0);
+}
+
+[data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
 }
