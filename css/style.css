@@ -198,7 +198,6 @@ h2 {
     height: 3.125em;
 }
 
-
 .image {
     background: rgb(241, 241, 241);
     width: 100%;
@@ -212,7 +211,176 @@ h2 {
     width: 350px;
 }
 
-/* Sobre/index */
+/* Desconto/index */
+
+.desconto {
+    display: flex;
+    justify-content: center;
+    background-color: #428C3F;
+}
+
+.desconto-box {
+    width: 400px;
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: rgba(24, 20, 20, 0.987);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: #fff;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+
+.desconto-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+
+.user-box button {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 24px;
+    font-size: 18px;
+    color: rgb(193, 163, 98);
+    border: 2px solid rgb(193, 163, 98);
+    border-radius: 34px;
+    background-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    overflow: hidden;
+    margin-left: 50px;
+}
+
+.user-box button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: inherit;
+    scale: 0;
+    z-index: -1;
+    background-color: rgb(193, 163, 98);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+button:hover::before {
+    scale: 3;
+}
+
+button:hover {
+    color: #212121;
+    scale: 1.1;
+    box-shadow: 0 0px 20px rgba(193, 163, 98, 0.4);
+}
+
+button:active {
+    scale: 1;
+}
+
+.cadastrado {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all ease .5s;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.cadastrado-body {
+    width: 400px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.dadosVazio {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all ease .5s;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.dadosVazio-body {
+    width: 400px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.dadosVazioOk {
+    background-color: #428C3F;
+    text-transform: uppercase;
+    color: #fff;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.dadosVazioOk:active,
+.active {
+    box-shadow: inset 4px 4px 0 #387237;
+    font-size: 0.8rem;
+}
+
+.cadastradoOk {
+    background-color: #428C3F;
+    text-transform: uppercase;
+    color: #fff;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.cadastradoOk:active,
+.active {
+    box-shadow: inset 4px 4px 0 #387237;
+    font-size: 0.8rem;
+}
 
 
 
@@ -554,6 +722,18 @@ footer {
     justify-content: center;
     align-items: center;
     position: absolute;
+    width: 100%;
+}
+
+.footer-index {
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: var(--header-footer);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
     width: 100%;
 }
 
