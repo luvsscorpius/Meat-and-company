@@ -210,7 +210,6 @@ h2 {
     color: #000;
 }
 
-
 .card:hover::after {
     bottom: 0;
     opacity: 1;
@@ -240,13 +239,13 @@ h2 {
 
 /* Desconto/index */
 
-.desconto {
+.desconto-index {
     display: flex;
     justify-content: center;
     background-color: #428C3F;
 }
 
-.desconto.dark {
+.desconto-index.dark {
     display: flex;
     justify-content: center;
     background-color: #333;

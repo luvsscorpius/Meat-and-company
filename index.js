@@ -12,6 +12,16 @@ const animationClss = 'animate'
 
 const mudarTema = document.querySelector('.mudar-tema')
 
+const menuRespon = document.querySelector('.hamburger')
+const li = document.querySelector('.ul-home li')
+
+menuRespon.addEventListener('click', (e) => {
+    e.preventDefault()
+    console.log('Cliquei')
+    li.style.display = 'flex'
+})
+
+
 mudarTema.addEventListener('click', (e) => {
     e.preventDefault()
 

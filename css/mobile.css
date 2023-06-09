@@ -126,13 +126,34 @@ aside.show {
 
 /* Index */
 
-
 .header-home {
     width: 100vw;
 }
 
+.ul-home {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+    list-style: none;
+}
+
+.ul-home {
+    clip: rect(0 0 0 0);
+    max-height: 0;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    zoom: 1;
+}
+
+.ul-home.opened {
+    max-height: 9999px;
+}
+
 .ul-home li {
-    display: none;
+    width: 100%;
+    display: block;
 }
 
 .hamburger {
