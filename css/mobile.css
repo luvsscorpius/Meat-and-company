@@ -126,23 +126,58 @@ aside.show {
 
 /* Index */
 
+
 .header-home {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
+    width: 100vw;
 }
 
-.ul-home {
-    display: flex;
-    flex-direction: column;
+.ul-home li {
+    display: none;
+}
+
+.hamburger {
+    display: block;
+    margin-right: 30px;
+    color: #fff;
 }
 
 .content-items {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.content-item {
+    margin-top: 100px;
+}
+
+.content-item h1 {
+    margin: 0 auto;
+}
+
+.content-item button {
+    margin: 0 auto;
+}
+
+.content-items img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: auto 0;
+    padding-right: 50px;
 }
 
 .mini-menu-item {
     display: flex;
     flex-direction: column;
+    width: 100vw;
+}
+
+.desconto {
+    width: 100vw;
+}
+
+.desconto-box {
+    width: 100vw;
 }

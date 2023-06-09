@@ -22,6 +22,16 @@ body {
 }
 
 /* Home/index */
+input[type=checkbox] {
+    display: none;
+}
+
+/*HAMBURGER MENU*/
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
 
 .header-home {
     position: fixed;
