@@ -1,4 +1,3 @@
-
 const btn = document.querySelector('.cadastrar')
 const nome = document.querySelector('.name')
 const email = document.querySelector('.email')

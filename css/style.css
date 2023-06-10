@@ -21,11 +21,6 @@ body {
     min-height: 100vh;
 }
 
-/* Home/index */
-input[type=checkbox] {
-    display: none;
-}
-
 /*HAMBURGER MENU*/
 .hamburger {
     display: none;
@@ -148,13 +143,11 @@ input[type=checkbox] {
 .mini-menu-items {
     background-color: #a4bf2c;
     height: 100%;
-    animation: light-to-dark1 0.3s ease-in-out;
 }
 
 .mini-menu-items.dark {
     background-color: #333;
     height: 100%;
-    animation: dark-to-light1 0.3s ease-in-out;
 }
 
 .mini-menu-items h1,
@@ -283,7 +276,6 @@ h2 {
     background: transparent;
 }
 
-
 .user-box button {
     cursor: pointer;
     position: relative;
@@ -347,24 +339,6 @@ button:active {
     color: #fff;
 }
 
-.garantir::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    width: 50px;
-    height: 50px;
-    border-radius: inherit;
-    scale: 0;
-    z-index: -1;
-    background-color: var(--aside);
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-}
-
-.garantir:hover::before {
-    scale: 3;
-}
-
 .garantir:hover {
     color: #212121;
     scale: 1.1;
@@ -426,7 +400,6 @@ button:active {
     justify-content: center;
     flex-direction: column;
 }
-
 
 .dadosVazioOk {
     background-color: #428C3F;
@@ -780,10 +753,6 @@ nav ul li a {
     grid-template-columns: repeat(4, 1fr);
 }
 
-#carne-bovina-area .burger-item .burger-item--name.dark {
-    color: #a4bf2c;
-}
-
 #frango-area {
     display: none;
     grid-template-columns: repeat(4, 1fr);
@@ -1118,7 +1087,6 @@ nav .items .item-carne:active,
 .burgersInfo--sector.dark {
     font-size: 20px;
     color: #eee;
-
 }
 
 .burgersInfo--kc.dark {
