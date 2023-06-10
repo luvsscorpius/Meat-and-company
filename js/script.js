@@ -8,6 +8,7 @@ let qtCarne = 1
 let qtFrango = 1
 let qtAcompanhamentos = 1
 let qtBebidasFrias = 1
+let qtVegano = 1
 
 // Funcoes auxiliares 
 const seleciona = (elemento) => document.querySelector(elemento)
@@ -23,6 +24,7 @@ const carneBovina = () => {
             seleciona('#frango-area').style.display = 'none'
             seleciona('#acompanhamentos-area').style.display = 'none'
             seleciona('#bebidas-frias-area').style.display = 'none'
+            seleciona('#vegano-vegetariano-area').style.display = 'none'
         }
     })
 }
@@ -38,6 +40,7 @@ const frango = () => {
             seleciona('#carne-bovina-area').style.display = 'none'
             seleciona('#acompanhamentos-area').style.display = 'none'
             seleciona('#bebidas-frias-area').style.display = 'none'
+            seleciona('#vegano-vegetariano-area').style.display = 'none'
         }
     })
 }
@@ -52,7 +55,7 @@ const acompanhamentos = () => {
             seleciona('#frango-area').style.display = 'none'
             seleciona('#carne-bovina-area').style.display = 'none'
             seleciona('#bebidas-frias-area').style.display = 'none'
-
+            seleciona('#vegano-vegetariano-area').style.display = 'none'
         }
     })
 }
@@ -67,6 +70,22 @@ const bebidasFrias = () => {
             seleciona('#frango-area').style.display = 'none'
             seleciona('#carne-bovina-area').style.display = 'none'
             seleciona('#bebidas-frias-area').style.display = 'grid'
+            seleciona('#vegano-vegetariano-area').style.display = 'none'
+        }
+    })
+}
+
+const vegano = () => {
+    const veg = seleciona('.item-vegano-vegetariano').addEventListener('click', (event) => {
+        event.preventDefault()
+        console.log('Cliquei na area bebidas frias')
+        const veggie = seleciona('#bebidas-frias-area')
+        if (veggie.style.display = 'none') {
+            seleciona('#acompanhamentos-area').style.display = 'none'
+            seleciona('#frango-area').style.display = 'none'
+            seleciona('#carne-bovina-area').style.display = 'none'
+            seleciona('#bebidas-frias-area').style.display = 'none'
+            seleciona('#vegano-vegetariano-area').style.display = 'grid'
         }
     })
 }
@@ -75,8 +94,9 @@ carneBovina()
 frango()
 acompanhamentos()
 bebidasFrias()
+vegano()
 
-const list = document.querySelectorAll('.item-carne, .item-frango, .item-acompanhamentos, .item-bebidas-frias')
+const list = document.querySelectorAll('.item-carne, .item-frango, .item-acompanhamentos, .item-bebidas-frias, .item-vegano-vegetariano')
 
 function activeLin() {
     list.forEach((item) =>
@@ -215,6 +235,10 @@ const abrirCarrinho = () => {
         // mostrar carrinho 
         seleciona('aside').classList.add('show')
         seleciona('header').style.display = 'flex'
+        const nav = seleciona('nav .items')
+        if (nav.style.display = 'flex') {
+            nav.style.display = 'grid'
+        }
     }
 
     // exibir o carrinho no modo mobile 
@@ -345,6 +369,7 @@ const finalizarCompra = () => {
         seleciona('.menu-openner span').innerHTML = cart.length
         seleciona('.pedido-confirmadoWindow').style.opacity = 0
         seleciona('.pedido-confirmadoWindow').style.display = 'flex'
+        seleciona('nav .items').style.display = 'flex'
         setTimeout(() => {
             seleciona('.pedido-confirmadoWindow').style.opacity = 1
         }, 150)
@@ -406,6 +431,7 @@ produtosJson.map((item, index) => {
     let frangoItem = seleciona('.models .burger-item').cloneNode(true)
     let acompanhamentosItem = seleciona('.models .burger-item').cloneNode(true)
     let bebidasFriasItem = seleciona('.models .burger-item').cloneNode(true)
+    let veganoItem = seleciona('.models .burger-item').cloneNode(true)
 
     if (item.type == "carne") {
         // agora que clonamos precisamos colocar na main
@@ -476,6 +502,20 @@ produtosJson.map((item, index) => {
             botoesFechar()
             preencherDadosModal(item)
             seleciona('.burgersInfo--qt').innerHTML = qtBebidasFrias
+            let chave = pegarkey(e)
+        })
+    }
+
+    if (item.type == "veggie") {
+        seleciona('#vegano-vegetariano-area').append(veganoItem)
+        preencherDadosDoItem(veganoItem, item, index)
+        veganoItem.querySelector('.burger-item a').addEventListener('click', (e) => {
+            e.preventDefault()
+            console.log('Clicou em um item vegano/vegetariano')
+            abrirModal()
+            botoesFechar()
+            preencherDadosModal(item)
+            seleciona('.burgersInfo--qt').innerHTML = qtVegano
             let chave = pegarkey(e)
         })
     }

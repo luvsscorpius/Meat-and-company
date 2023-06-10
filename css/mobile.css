@@ -26,13 +26,17 @@ nav .items {
     white-space: nowrap;
     padding-left: 150px;
     gap: 0;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
 }
 
 nav .items .item-carne,
 .item-frango,
 .item-acompanhamentos,
-.item-bebidas-frias {
+.item-bebidas-frias,
+.item-vegano-vegetariano {
     display: inline-block;
     font-size: 20px;
     white-space: nowrap;
@@ -53,6 +57,10 @@ nav .items .item-carne,
 }
 
 #bebidas-frias-area {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+#vegano-vegetariano-area {
     grid-template-columns: repeat(1, 1fr);
 }
 

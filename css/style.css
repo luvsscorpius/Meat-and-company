@@ -742,6 +742,7 @@ h2 {
 
 nav .items {
     display: flex;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-content: center;
     align-items: center;
@@ -750,9 +751,11 @@ nav .items {
 nav .items .item-carne,
 .item-frango,
 .item-acompanhamentos,
-.item-bebidas-frias {
+.item-bebidas-frias,
+.item-vegano-vegetariano {
     background-color: var(--header-footer);
     list-style: none;
+    text-align: center;
     height: 25px;
     font-size: 20px;
     color: #fff;
@@ -774,10 +777,6 @@ nav ul li a {
     grid-template-columns: repeat(4, 1fr);
 }
 
-#carne-bovina-area .burger-item .burger-item--name.dark {
-    color: #a4bf2c;
-}
-
 #frango-area {
     display: none;
     grid-template-columns: repeat(4, 1fr);
@@ -792,6 +791,12 @@ nav ul li a {
     display: none;
     grid-template-columns: repeat(4, 1fr);
 }
+
+#vegano-vegetariano-area {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+}
+
 
 footer {
     left: 0;
@@ -1077,6 +1082,7 @@ nav .items .item-carne:active,
 .item-frango:active,
 .item-acompanhamentos:active,
 .item-bebidas-frias:active,
+.item-vegano-vegetariano:active,
 .active {
     box-shadow: inset -4px 4px 0 #f57506;
     font-size: 15px;
