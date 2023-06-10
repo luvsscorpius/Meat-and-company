@@ -12,15 +12,16 @@ const animationClss = 'animate'
 
 const mudarTema = document.querySelector('.mudar-tema')
 
-const menuRespon = document.querySelector('.hamburger')
-const li = document.querySelector('.ul-home li')
+const ul = document.querySelector('.header-home ul')
+const menuBtn = document.querySelector('.hamburger')
 
-menuRespon.addEventListener('click', (e) => {
-    e.preventDefault()
-    console.log('Cliquei')
-    li.style.display = 'flex'
-})
-
+function menuShow() {
+    if (ul.classList.contains('open')) {
+        ul.classList.remove('open')
+    } else {
+        ul.classList.add('open')
+    }
+}
 
 mudarTema.addEventListener('click', (e) => {
     e.preventDefault()

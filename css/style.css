@@ -46,6 +46,10 @@ input[type=checkbox] {
     align-items: center;
 }
 
+.header-home h1 {
+    color: #eee;
+}
+
 .header-home ul {
     display: flex;
     flex-wrap: wrap;
@@ -326,7 +330,6 @@ button:active {
 .garantir {
     cursor: pointer;
     width: 180px;
-    position: relative;
     padding: 10px 24px;
     font-size: 18px;
     color: #eee;
@@ -648,7 +651,11 @@ header {
 header h1 {
     margin-left: 1rem;
     font-size: 1.8rem;
+}
+
+header h1 a {
     color: #eee;
+    text-decoration: none;
 }
 
 header ul {
