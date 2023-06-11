@@ -213,15 +213,6 @@ h2 {
     opacity: 1;
 }
 
-.card:active {
-    transform: scale(0.98);
-}
-
-.card:active::after {
-    content: "Added !";
-    height: 3.125em;
-}
-
 .image {
     background: rgb(241, 241, 241);
     width: 100%;
@@ -232,7 +223,7 @@ h2 {
 }
 
 .image img {
-    width: 350px;
+    width: 320px;
 }
 
 /* Desconto/index */
@@ -276,7 +267,6 @@ h2 {
     outline: none;
     background: transparent;
 }
-
 
 .user-box button {
     cursor: pointer;
@@ -504,10 +494,6 @@ button:active {
     transition: all ease .2s;
 }
 
-.dark.burger-item--add {
-    color: #fff;
-}
-
 .burger-item a:hover .burger-item--add {
     opacity: 0.95;
 }
@@ -517,10 +503,6 @@ button:active {
     color: #333;
     font-weight: bold;
     margin-top: 10px;
-}
-
-.dark.burger-item--price {
-    color: #fff;
 }
 
 .burger-item--name {
@@ -796,7 +778,6 @@ nav ul li a {
     display: none;
     grid-template-columns: repeat(4, 1fr);
 }
-
 
 footer {
     left: 0;

@@ -29,7 +29,6 @@ const carneBovina = () => {
     })
 }
 
-
 const frango = () => {
     const frango = seleciona('.item-frango').addEventListener('click', (event) => {
         event.preventDefault()
@@ -348,7 +347,7 @@ const atualizarCarrinho = () => {
 
         // exibir na tela os resultados
         seleciona('.subtotal span:last-child').innerHTML = subtotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-        seleciona('.desconto span:last-child').innerHTML = desconto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+        seleciona('.desc span:last-child').innerHTML = desconto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
         seleciona('.total span:last-child').innerHTML = total.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
     } else {
         // ocultar o carrinho
