@@ -167,6 +167,11 @@ aside.show {
 
 .header-home ul li a {
     font-size: 23px;
+    margin-right: 20px;
+}
+
+.content {
+    height: 100%;
 }
 
 .content-items {
