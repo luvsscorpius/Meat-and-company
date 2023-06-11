@@ -38,12 +38,12 @@ mudarTema.addEventListener('click', (e) => {
 
     if (mudarTema.src.match('moon')) {
         mudarTema.src = 'img/sun.png'
-        github.src = '../img/github-mark-white.png'
-        linkedin.src = '../img/linkedin-white-icon.png'
+        github.src = 'img/github-mark-white.png'
+        linkedin.src = 'img/linkedin-white-icon.png'
     } else {
         mudarTema.src = 'img/moon.png'
-        github.src = '../img/github-mark.png'
-        linkedin.src = '../img/linkedin-icon.png'
+        github.src = 'img/github-mark.png'
+        linkedin.src = 'img/linkedin-icon.png'
     }
 })
 
