@@ -181,9 +181,7 @@ aside.show {
 }
 
 .content-item {
-    margin-top: 90px;
-    overflow: hidden;
-    height: 100vh;
+    margin-top: 80px;
 }
 
 .content-item h1 {
@@ -201,7 +199,7 @@ aside.show {
 
 .content-items img {
     width: 100%;
-    height: 50%;
+    height: 100%;
     display: flex;
     margin: auto 0;
     padding-right: 50px;
